@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="scripts/index.js" ></script>
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="app">
+            <div class="form">
+                <div class="bill-box">
+                    <label class="label" for="bill">Bill</label>
+                    <div class="bill-input-box">
+                        <input class="input input-bill" type="number" placeholder="0" id="bill" />
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <span class="label">Select Tip %</span>
+                    <div class="tips">
+                        <button data-tip="5" class="tip btn">5%</button>
+                        <button data-tip="10" class="tip btn">10%</button>
+                        <button data-tip="15" class="tip btn">15%</button>
+                        <button data-tip="25" class="tip btn">25%</button>
+                        <button data-tip="50" class="tip btn">50%</button>
+                        <input class="tip input input-tip" type="number" placeholder="Custom" />
+                    </div>
+                </div>
+                
+                <div class="people-box">
+                    <label class="label" for="people">Number of people</label>
+                    <div class="people-input-box">
+                        <input class="input input-people" type="number" placeholder="0" id="people" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <div class="summary-tip">
+                    <p class="summary-label">Tip Amount<span>/ person</span></p>
+                    <p class="summary-amount label-tip">$0.00</p>
+                </div>
+
+                <div class="summary-total">
+                    <p class="summary-label">Total<span>/ person</span></p>
+                    <p class="summary-amount label-total">$0.00</p>
+                </div>
+
+                <button class="btn btn-reset">reset</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    line-height: 1;
+    background-color: hsl(185, 41%, 84%);
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input,
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 100rem;
+    margin: 8rem auto;
+    padding: 0 3.2rem;
+}
+
+.app {
+    display: grid;
+    gap: 4.8rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 4.8rem;
+
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 12px;
+    box-shadow: 0 13px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.tips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+.summary {
+    background-color: hsl(183, 100%, 15%);
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    padding: 4.8rem 3.2rem;
+    border-radius: 12px;
+}
+
+.bill-input-box,
+.people-input-box {
+    width: 100%;
+    position: relative;
+}
+
+.bill-input-box::before,
+.people-input-box::before {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(1.2rem, -50%);
+}
+
+.people-input-box::after {
+    content: "Can't be zero";
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    font-size: 1.4rem;
+    color: #e64980;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.people-box.error .people-input-box::after {
+    opacity: 1;
+}
+
+.people-box.error .input {
+    box-shadow: 0 0 0 0.2rem #e64980;
+}
+
+.bill-input-box::before {
+    content: url(/images/icon-dollar.svg);
+}
+.people-input-box::before {
+    content: url(/images/icon-person.svg);
+}
+
+.input {
+    width: 100%;
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    font-size: 1.8rem;
+    text-align: right;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem hsl(172, 67%, 45%);
+}
+
+.btn {
+    font-size: 1.8rem;
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(189, 41%, 97%);
+    padding: 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Dark-grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+.btn.selected {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.btn:not(.selected):hover {
+    background-color: rgba(38, 192, 171, 0.6);
+    color: hsl(183, 100%, 15%);
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.summary-tip,
+.summary-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label {
+    display: block;
+    font-size: 1.6rem;
+    color: hsl(186, 14%, 43%);
+    margin-bottom: 1.6rem;
+}
+
+.summary-label {
+    color: hsl(189, 41%, 97%);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.summary-label span {
+    display: block;
+    font-size: 1.4rem;
+    color: hsl(184, 14%, 56%);
+}
+
+.summary-amount {
+    font-size: 4.4rem;
+    color: hsl(172, 67%, 45%);
+}
+
+.btn-reset {
+    margin-top: auto;
+    text-transform: uppercase;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    border-radius: 8px;
+}
+
+.btn-reset:hover {
+    background-color: hsl(185, 41%, 84%);
+}
+
+.input-tip {
+    text-align: center;
+}
+
+@media (max-width: 59em) {
+    .app {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 34em) {
+    html {
+        font-size: 56.25%;
+    }
+    .app,
+    .summary {
+        padding: 2.4rem 1.6rem;
+    }
+    .tips {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .summary-amount {
+        font-size: 3rem;
+    }
+}
